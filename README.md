@@ -15,8 +15,8 @@ In the medical field, AI development faces three major roadblocks:
 
 ## The Solution: MedFed Pro
 MedFed Pro is a robust Federated Learning framework. It allows hospitals to collaborate on a "Global Diagnostic Model" without ever exchanging raw data.
-🌟 Key Highlights
- ## Privacy-First: Implementation of Differential Privacy using Gaussian noise injection.
+## Key Highlights
+## Privacy-First:Implementation of Differential Privacy using Gaussian noise injection.
 ## Collaborative: Uses FedAvg to aggregate knowledge from multiple specialist institutions.
 ## Battle-Hardened: Features a Coordinate-wise Median Aggregator to detect and neutralize malicious hackers.
 

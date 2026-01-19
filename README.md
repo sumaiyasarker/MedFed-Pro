@@ -1,42 +1,34 @@
-#Project MedFed Pro: Privacy-Preserving & Secure Medical AI
+🏥 MedFed Pro
+Secure, Privacy-Preserving Federated Learning for Medical AI
+![alt text](https://img.shields.io/badge/license-MIT-green)
 
-##📌 The Problem
-In healthcare, data silos prevent AI from reaching its full potential.
-Privacy: Hospitals cannot share patient data due to HIPAA/GDPR.
-Bias: A single hospital might only see specific demographics (Non-IID data), making their local AI inaccurate for the general public.
-Security: Decentralized networks are vulnerable to Poisoning Attacks where malicious actors try to sabotage the global model.
+![alt text](https://img.shields.io/badge/python-3.12-blue?logo=python)
 
-##🚀 The Solution: MedFed Pro
+![alt text](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow)
 
-MedFed Pro is a Federated Learning system that allows hospitals to train a global diagnostic model without ever sharing raw patient data. This project implements a full lifecycle of Federated Learning: Privacy, Utility, and Adversarial Security.
-
-
-##🌟 Key Features
-
-Decentralized Training: Implementation of the FedAvg (Federated Averaging) algorithm.
-Non-IID Simulation: Simulates "Specialist Hospitals" with biased data distributions.
-Differential Privacy: Injects Gaussian noise into weight updates to prevent data reconstruction.
-Byzantine Robustness: A secure Coordinate-wise Median Aggregator that defends the global model against malicious hackers.
-
+![alt text](https://img.shields.io/badge/Security-Byzantine--Robust-red)
+📌 The Problem: Data Silos & Vulnerability
+In the medical field, AI development faces three major roadblocks:
+🔒 Privacy: HIPAA/GDPR laws prevent sharing sensitive patient images.
+📉 Bias: A single hospital might only see specific patient types (Non-IID data), making local AI unreliable for others.
+⚔️ Security: Decentralized networks are vulnerable to Poisoning Attacks, where a single malicious actor can sabotage the global model.
+🚀 The Solution: MedFed Pro
+MedFed Pro is a robust Federated Learning framework. It allows hospitals to collaborate on a "Global Diagnostic Model" without ever exchanging raw data.
+🌟 Key Highlights
+Privacy-First: Implementation of Differential Privacy using Gaussian noise injection.
+Collaborative: Uses FedAvg to aggregate knowledge from multiple specialist institutions.
+Battle-Hardened: Features a Coordinate-wise Median Aggregator to detect and neutralize malicious hackers.
+🛠️ Technical Architecture: The Three Pillars
+Pillar	Method	Purpose
+Privacy	Differential Privacy	Prevents model inversion attacks from reconstructing patient photos.
+Utility	Federated Averaging	Allows models to learn from diverse, Non-IID data distributions.
+Security	Robust Median Aggregation	Ensures the model remains accurate even if 25% of the network is malicious.
 📊 Experimental Results
-1. The Collaboration Advantage (Privacy + Utility)
-When hospitals worked alone, they were limited by their local data bias. By collaborating, the accuracy nearly doubled.
-Local-Only Accuracy: ~41.2% (Stuck due to data bias)
-Federated Accuracy: ~89.8% (Learned from the whole network)
-2. The Security Shield (Adversarial Robustness)
-## I introduced a Malicious Client performing a "Sign-Flipping" poisoning attack.
-Standard FedAvg: Accuracy collapsed from 81.8% to 77.8% under attack.
-MedFed Pro (Robust Median): Maintained 87.7% accuracy by mathematically ignoring the hacker's updates.
-##⚙️ Technical Architecture
-
-The Three-Pillar Defense
-Federated Learning: Only model weights (gradients) are exchanged. Raw images never leave the hospital's local server.
-Differential Privacy: We add a NOISE_MULTIPLIER to updates, ensuring that the global model cannot be "reversed" to reveal private patient features.
-Median Aggregation: Unlike a simple Mean, the Median is an outlier-resistant statistic. It allows the server to identify and discard "poisoned" updates from malicious nodes.
-
-##🛠️ Installation & Usage
-
-Prerequisites
-Python 3.12+
-TensorFlow 2.x
-NumPy, Matplotlib, Seaborn
+1. The Power of Collaboration
+Learning Method	Data Access	Accuracy
+Local-Only	Single Hospital (Biased)	41.2%
+MedFed Pro	Global Knowledge (Private)	89.8%
+2. The Security Shield (Hacker Simulation)
+We simulated a "Sign-Flipping" Attack where a malicious hospital tried to crash the global accuracy.
+❌ Standard Aggregator: Accuracy dropped to 77.8% (Vulnerable).
+✅ MedFed Robust Aggregator: Maintained 87.7% (Defended).

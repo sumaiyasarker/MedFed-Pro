@@ -1,6 +1,5 @@
 🏥 MedFed Pro
 Secure, Privacy-Preserving Federated Learning for Medical AI
-![alt text](https://img.shields.io/badge/license-MIT-green)
 
 ![alt text](https://img.shields.io/badge/python-3.12-blue?logo=python)
 
